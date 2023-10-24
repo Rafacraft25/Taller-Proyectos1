@@ -1,0 +1,309 @@
+:root{
+    --width: 300px;
+    --padding: 10px;
+    --bgcolor: #a77792;
+    --hovercolor: #6f2e53;
+    --width-collapsed: 50px;
+}
+body {
+    background-image: url('/mongo/img/img777.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    font-family: 'Krub', sans-serif;
+    margin-left: var(--width-collapsed);
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    background-color: #7d3d5b;
+    color: #f7f6f6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease infinite; /* Animación de flotación */
+}
+
+/* Animación de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* Sin movimiento en el inicio y el final */
+    }
+    50% {
+        transform: translateY(-5px); /* Flotar hacia arriba en la mitad de la animación */
+    }
+}
+
+/* Estilos para la barra de menú */
+.body-expanded {
+    margin-left: var(--width);
+}
+
+#main-container {
+    color: white;
+}
+
+#sidemenu {
+    background-color: var(--bgcolor);
+    color: white;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#sidemenu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos para el encabezado (header) */
+#header {
+    box-sizing: border-box;
+    border-bottom: solid 1px var(--hovercolor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+#title {
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#menu-btn {
+    cursor: pointer;
+    padding: 1px 0;
+    width: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-btn:hover {
+    background-color: rgb(108, 9, 91);
+}
+
+#menu-btn img {
+    
+    width: 50px; /* Cambia el ancho según sea necesario */
+    height: 30px; /* Cambia la altura según sea necesario */
+    margin: 1px 0 1px -10px;
+}
+
+/* Ajuste para el título cuando se expande el menú */
+.menu-expanded #header #title {
+    width: calc(100% - var(--width-collapsed) - 20px); /* Considera el espacio del botón del menú */
+}
+
+/* Estilos para el perfil */
+#profile {
+    border-bottom: solid 1px var(--hovercolor);
+    padding: var(--padding) 0;
+    text-align: center;
+}
+
+#profile #photo {
+    box-sizing: border-box;
+    padding: var(--padding);
+    margin: 0 auto;
+}
+
+#profile #photo img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+#profile #photo, #profile #name {
+    font-size: 24px;
+    padding: var(--padding) 0;
+    overflow: hidden;
+}
+
+/* Estilos para los elementos del menú */
+#menu-items {
+    overflow: hidden;
+}
+
+#menu-items .item {
+    width: var(--width);
+}
+
+#menu-items .item .icon {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: var(--padding);
+    width: var(--width-collapsed);
+}
+
+#menu-items .item .icon, 
+#menu-items .item .title {
+    font-size: 13px;
+    vertical-align: middle;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#menu-items .item a {
+    display: block;
+}
+
+#menu-items .item a:hover {
+    background-color: var(--hovercolor);
+}
+
+#menu-items .item .icon img {
+    width: 100%;
+}
+
+#menu-items .item .title {
+    padding: var(--padding) 0;
+}
+
+#menu-items .item.separator {
+    height: 1px;
+    border-bottom: solid 1px var(--hovercolor);
+    margin: 1px 0;
+}
+
+/* Estilos para el menú expandido */
+.menu-expanded {
+    width: var(--width);
+    box-shadow: 0 0 10px rgb(40, 38, 38);
+}
+
+.menu-expanded #header #title {
+    display: inline-block;
+    width: calc(100% - var(--width-collapsed) - 20px); /* Considera el espacio del botón del menú */
+}
+
+.menu-expanded #header #title span {
+    width: calc(var(--width) - var(--width-collapsed) - 20px); /* Considera el espacio del botón del menú */
+}
+
+.menu-expanded #profile #photo {
+    width: 200px;
+}
+
+.menu-expanded #profile #name {
+    width: 100%;
+}
+
+.menu-collapsed {
+    width: var(--width-collapsed);
+}
+
+.menu-collapsed #header #title {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-collapsed #profile #name {
+    display: none;
+}
+
+.menu-collapsed .item {
+    width: 100px;
+}
+
+/* Estilos para el contenido */
+.b1 {
+    margin-top: 10%;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.botones button {
+    background-color: #ecdfec;
+    width: 350px;
+    color: #3e2241; 
+    padding: 10px 20px; 
+    border: 1px solid rgb(59, 50, 59);
+    cursor: pointer; 
+    margin: 5px 0; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+.botones button:hover {
+    background-color: #6a3562;
+    color: white;
+}
+
+.iz, .botones, .dr {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box; 
+    border: 1px ; 
+    padding: 10px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .iz, .botones, .dr {
+        width: 33.33%;
+        height: 100%;
+        float: left;
+    }
+    
+    .botones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .iz, .botones, .dr {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .botones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botones button {
+        width: 350px;
+    }
+
+    .botones.ex button {
+        width: 50px;
+    }
+}
+
+/* Estilos para las secciones en una pantalla pequeña (vertical) */
+@media (max-width: 767px) {
+    .iz, .botones, .dr {
+        width: 100%;
+        float: none;
+    }
+
+    .botones button {
+        width: 100%;
+    }
+
+    .botones.ex button {
+        width: 100%;
+    }
+}
